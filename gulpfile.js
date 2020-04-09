@@ -35,7 +35,7 @@ gulp.task('buildCSS', () => {
 });
 
 gulp.task('move', () => {
-    return gulp.src(['./index.html', './package.json', './package-lock.json'])
+    return gulp.src(['./index.html'])
         .pipe(gulp.dest('./build'));
 });
 
@@ -48,7 +48,7 @@ gulp.task('browser-sync', () => {
     });
     watch('./assets/js/*.js', 'buildJS');
     watch('./assets/scss/*.scss', 'buildCSS');
-    watch(['./index.html', './package.json', './package-lock.json'], 'move');
+    watch(['./index.html'], 'move');
 });
 
 gulp.task('deleteBuild', () => {
